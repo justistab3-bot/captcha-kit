@@ -1,0 +1,40 @@
+[build-system]
+requires = ["setuptools>=64", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "captcha-kit"
+version = "0.1.0"
+description = "固定点阵字体验证码识别：像素精确匹配（带完备性证明）+ 缩放图片的 DP 联合切分识别"
+readme = "README.md"
+requires-python = ">=3.9"
+license = { text = "MIT" }
+keywords = ["captcha", "ocr", "template-matching", "yolo", "image-processing"]
+classifiers = [
+    "Development Status :: 3 - Alpha",
+    "Intended Audience :: Developers",
+    "License :: OSI Approved :: MIT License",
+    "Programming Language :: Python :: 3",
+    "Topic :: Scientific/Engineering :: Image Recognition",
+]
+dependencies = [
+    "numpy>=1.21",
+    "pillow>=9.0",
+]
+
+[project.optional-dependencies]
+test = ["pytest>=7.0"]
+
+[project.scripts]
+captcha-kit = "captcha_kit.cli:main"
+
+[project.urls]
+Homepage = "https://github.com/<your-name>/captcha-kit"
+Issues = "https://github.com/<your-name>/captcha-kit/issues"
+
+[tool.setuptools.packages.find]
+include = ["captcha_kit*"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+addopts = "-q"
