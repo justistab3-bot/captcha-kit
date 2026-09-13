@@ -22,7 +22,7 @@ expr, answer = arithmetic.evaluate(result.text)      # ('13+15', 28)
 ## 安装
 
 ```bash
-git clone <your-repo-url>
+git clone https://github.com/justistab3-bot/captcha-kit/
 cd captcha-kit
 pip install -e .            # 运行依赖：numpy、pillow
 pip install -e ".[test]"    # 另加 pytest
